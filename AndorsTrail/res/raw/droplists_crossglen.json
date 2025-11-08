@@ -41,6 +41,14 @@
                     "min":2,
                     "max":2
                 }
+            },
+            {
+              "itemID":"oegyth",
+              "chance":"100",
+              "quantity": {
+                "min":100,
+                "max":100
+              }
             }
         ]
     },
