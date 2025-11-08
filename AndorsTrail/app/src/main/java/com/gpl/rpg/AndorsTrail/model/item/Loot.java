@@ -27,7 +27,7 @@ public final class Loot {
 
 	private void add(Loot l) {
 		this.exp += l.exp;
-		this.gold += l.gold;
+		this.gold += l.gold*2;
 		this.items.add(l.items);
 	}
 
