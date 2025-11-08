@@ -74,15 +74,15 @@ public final class DebugInterface {
 				}
 			}
 		})
-				,new DebugButton("dmg", new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				world.model.player.damagePotential.set(500, 500);
-				world.model.player.attackChance = 500;
-				world.model.player.attackCost = 1;
-				showToast(mainActivity, "DEBUG: damagePotential=500, chance=500%, cost=1", Toast.LENGTH_SHORT);
-			}
-		})
+//				,new DebugButton("dmg", new OnClickListener() {
+//			@Override
+//			public void onClick(View arg0) {
+//				world.model.player.damagePotential.set(500, 500);
+//				world.model.player.attackChance = 500;
+//				world.model.player.attackCost = 1;
+//				showToast(mainActivity, "DEBUG: damagePotential=500, chance=500%, cost=1", Toast.LENGTH_SHORT);
+//			}
+//		})
 				/*,new DebugButton("dmg=1", new OnClickListener() {
                     @Override
                     public void onClick(View arg0) {
@@ -90,23 +90,23 @@ public final class DebugInterface {
                         showToast(mainActivity, "DEBUG: damagePotential=1", Toast.LENGTH_SHORT);
                     }
                 })*/
-				,new DebugButton("itm", new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				for (ItemType item : world.itemTypes.UNITTEST_getAllItemTypes().values()) {
-					world.model.player.inventory.addItem(item, 10);
-				}
-				world.model.player.inventory.gold += 50000;
-				showToast(mainActivity, "DEBUG: added items", Toast.LENGTH_SHORT);
-			}
-		})
-				,new DebugButton("xp", new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				controllerContext.actorStatsController.addExperience(10000);
-				showToast(mainActivity, "DEBUG: given 10000 exp", Toast.LENGTH_SHORT);
-			}
-		})
+//				,new DebugButton("itm", new OnClickListener() {
+//			@Override
+//			public void onClick(View arg0) {
+//				for (ItemType item : world.itemTypes.UNITTEST_getAllItemTypes().values()) {
+//					world.model.player.inventory.addItem(item, 10);
+//				}
+//				world.model.player.inventory.gold += 50000;
+//				showToast(mainActivity, "DEBUG: added items", Toast.LENGTH_SHORT);
+//			}
+//		})
+//				,new DebugButton("xp", new OnClickListener() {
+//			@Override
+//			public void onClick(View arg0) {
+//				controllerContext.actorStatsController.addExperience(10000);
+//				showToast(mainActivity, "DEBUG: given 10000 exp", Toast.LENGTH_SHORT);
+//			}
+//		})
 				,new DebugButton("rst", new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -116,23 +116,23 @@ public final class DebugInterface {
 				showToast(mainActivity, "DEBUG: maps respawned", Toast.LENGTH_SHORT);
 			}
 		})
-				,new DebugButton("hp", new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				world.model.player.baseTraits.maxHP = 500;
-				world.model.player.health.max = world.model.player.baseTraits.maxHP;
-				controllerContext.actorStatsController.setActorMaxHealth(world.model.player);
-				world.model.player.conditions.clear();
-				showToast(mainActivity, "DEBUG: hp set to max", Toast.LENGTH_SHORT);
-			}
-		})
-				,new DebugButton("skl", new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				world.model.player.availableSkillIncreases += 10;
-				showToast(mainActivity, "DEBUG: 10 skill points", Toast.LENGTH_SHORT);
-			}
-		})
+//				,new DebugButton("hp", new OnClickListener() {
+//			@Override
+//			public void onClick(View arg0) {
+//				world.model.player.baseTraits.maxHP = 500;
+//				world.model.player.health.max = world.model.player.baseTraits.maxHP;
+//				controllerContext.actorStatsController.setActorMaxHealth(world.model.player);
+//				world.model.player.conditions.clear();
+//				showToast(mainActivity, "DEBUG: hp set to max", Toast.LENGTH_SHORT);
+//			}
+//		})
+//				,new DebugButton("skl", new OnClickListener() {
+//			@Override
+//			public void onClick(View arg0) {
+//				world.model.player.availableSkillIncreases += 10;
+//				showToast(mainActivity, "DEBUG: 10 skill points", Toast.LENGTH_SHORT);
+//			}
+//		})
 				,new DebugButton("spd", new OnClickListener() {
 			boolean fast = Constants.MINIMUM_INPUT_INTERVAL == Constants.MINIMUM_INPUT_INTERVAL_FAST;
 			@Override
