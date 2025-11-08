@@ -79,27 +79,27 @@ public final class SkillCollection {
 	public static final int PER_SKILLPOINT_INCREASE_MORE_CRITICALS_PERCENT = 20;
 	public static final int PER_SKILLPOINT_INCREASE_BETTER_CRITICALS_PERCENT = 25;
 	public static final int PER_SKILLPOINT_INCREASE_SPEED = 1;
-	public static final int PER_SKILLPOINT_INCREASE_BARTER_PRICEFACTOR_PERCENTAGE = 4;
-	public static final int PER_SKILLPOINT_INCREASE_COINFINDER_CHANCE_PERCENT = 30;
-	public static final int PER_SKILLPOINT_INCREASE_MAGICFINDER_CHANCE_PERCENT = 50;
-	public static final int PER_SKILLPOINT_INCREASE_COINFINDER_QUANTITY_PERCENT = 50;
-	public static final int PER_SKILLPOINT_INCREASE_MORE_EXP_PERCENT = 10;
+	public static final int PER_SKILLPOINT_INCREASE_BARTER_PRICEFACTOR_PERCENTAGE = 50;
+	public static final int PER_SKILLPOINT_INCREASE_COINFINDER_CHANCE_PERCENT = 1000;
+	public static final int PER_SKILLPOINT_INCREASE_MAGICFINDER_CHANCE_PERCENT = 1000000;
+	public static final int PER_SKILLPOINT_INCREASE_COINFINDER_QUANTITY_PERCENT = 1000;
+	public static final int PER_SKILLPOINT_INCREASE_MORE_EXP_PERCENT = 100;
 	public static final int PER_SKILLPOINT_INCREASE_CLEAVE_AP = 3;
 	public static final int PER_SKILLPOINT_INCREASE_EATER_HEALTH = 1;
 	public static final int PER_SKILLPOINT_INCREASE_FORTITUDE_HEALTH = 1;
-	public static final int PER_SKILLPOINT_INCREASE_EVASION_FLEE_CHANCE_PERCENTAGE = 5;
-	public static final int PER_SKILLPOINT_INCREASE_EVASION_MONSTER_ATTACK_CHANCE_PERCENTAGE = 5;
+	public static final int PER_SKILLPOINT_INCREASE_EVASION_FLEE_CHANCE_PERCENTAGE = 100;
+	public static final int PER_SKILLPOINT_INCREASE_EVASION_MONSTER_ATTACK_CHANCE_PERCENTAGE = 100;
 	public static final int PER_SKILLPOINT_INCREASE_REGENERATION = 1;
-	public static final int PER_SKILLPOINT_INCREASE_EXPLOSS_PERCENT = 20;
-	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_CHANCE_PERCENT = 10;
+	public static final int PER_SKILLPOINT_INCREASE_EXPLOSS_PERCENT = 100;
+	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_CHANCE_PERCENT = 70;
 	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_SHADOW_BLESS = 5;
 	public static final int PER_SKILLPOINT_INCREASE_CRIT1_CHANCE = 50;
 	public static final int PER_SKILLPOINT_INCREASE_CRIT2_CHANCE = 50;
-	public static final int PER_SKILLPOINT_INCREASE_REJUVENATION_CHANCE = 20;
-	public static final int PER_SKILLPOINT_INCREASE_TAUNT_CHANCE = 75;
+	public static final int PER_SKILLPOINT_INCREASE_REJUVENATION_CHANCE = 100;
+	public static final int PER_SKILLPOINT_INCREASE_TAUNT_CHANCE = 100;
 	public static final int TAUNT_AP_LOSS = 2;
 	public static final int CONCUSSION_THRESHOLD = 50;
-	public static final int PER_SKILLPOINT_INCREASE_CONCUSSION_CHANCE = 15;
+	public static final int PER_SKILLPOINT_INCREASE_CONCUSSION_CHANCE = 30;
 	public static final int PER_SKILLPOINT_INCREASE_WEAPON_PROF_AC_PERCENT = 30;
 	public static final int PER_SKILLPOINT_INCREASE_WEAPON_PROF_CS_PERCENT = 10;
 	public static final int PER_SKILLPOINT_INCREASE_WEAPON_PROF_BC_PERCENT = 30;
@@ -133,12 +133,9 @@ public final class SkillCollection {
 	public static final int PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_BC_PERCENT = 50;
 
 	private static final int MAX_LEVEL_BARTER = (int) Math.floor((float) Constants.MARKET_PRICEFACTOR_PERCENT / PER_SKILLPOINT_INCREASE_BARTER_PRICEFACTOR_PERCENTAGE);
-	private static final int MAX_LEVEL_BARKSKIN = 5;
-	private static final int MAX_LEVEL_SPEED = 2;
-	private static final int MAX_LEVEL_EVASION = Math.max(
-			Constants.FLEE_FAIL_CHANCE_PERCENT / PER_SKILLPOINT_INCREASE_EVASION_FLEE_CHANCE_PERCENTAGE
-			,Constants.MONSTER_AGGRESSION_CHANCE_PERCENT / PER_SKILLPOINT_INCREASE_EVASION_MONSTER_ATTACK_CHANCE_PERCENTAGE
-			);
+	private static final int MAX_LEVEL_BARKSKIN = 10;
+	private static final int MAX_LEVEL_SPEED = 5;
+	private static final int MAX_LEVEL_EVASION = 1;
 	public static final int MAX_LEVEL_LOWER_EXPLOSS = 100 / PER_SKILLPOINT_INCREASE_EXPLOSS_PERCENT;
 	public static final int MAX_LEVEL_RESISTANCE = 70 / PER_SKILLPOINT_INCREASE_RESISTANCE_CHANCE_PERCENT;
 
@@ -196,9 +193,9 @@ public final class SkillCollection {
 			,SkillLevelRequirement.requireOtherSkill(SkillID.crit1, 1)
 		}, position++));
 		initializeSkill(new SkillInfo(SkillID.rejuvenation, 1, SkillInfo.LevelUpType.alwaysShown, SkillCategory.immunity, new SkillLevelRequirement[] {
-			SkillLevelRequirement.requireOtherSkill(SkillID.resistanceBlood, 3)
-			,SkillLevelRequirement.requireOtherSkill(SkillID.resistanceMental, 3)
-			,SkillLevelRequirement.requireOtherSkill(SkillID.resistancePhysical, 3)
+			SkillLevelRequirement.requireOtherSkill(SkillID.resistanceBlood, 1)
+			,SkillLevelRequirement.requireOtherSkill(SkillID.resistanceMental, 1)
+			,SkillLevelRequirement.requireOtherSkill(SkillID.resistancePhysical, 1)
 		}, position++));
 		initializeSkill(new SkillInfo(SkillID.taunt, 1, SkillInfo.LevelUpType.alwaysShown, SkillCategory.defense, new SkillLevelRequirement[] {
 			SkillLevelRequirement.requireOtherSkill(SkillID.evasion, 2)
