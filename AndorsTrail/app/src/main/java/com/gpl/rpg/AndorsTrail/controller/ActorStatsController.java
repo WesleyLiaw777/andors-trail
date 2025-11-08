@@ -592,10 +592,11 @@ public final class ActorStatsController {
 	public void applySkillEffectsForNewRound(Player player, PredefinedMap currentMap) {
 		int level = player.getSkillLevel(SkillCollection.SkillID.regeneration);
 		if (level > 0) {
-			boolean hasAdjacentMonster = MovementController.hasAdjacentAggressiveMonster(currentMap, player);
-			if (!hasAdjacentMonster) {
-				addActorHealth(player, level * SkillCollection.PER_SKILLPOINT_INCREASE_REGENERATION);
-			}
+//			boolean hasAdjacentMonster = MovementController.hasAdjacentAggressiveMonster(currentMap, player);
+//			if (!hasAdjacentMonster) {
+//				addActorHealth(player, level * SkillCollection.PER_SKILLPOINT_INCREASE_REGENERATION);
+//			}
+            addActorHealth(player, level * SkillCollection.PER_SKILLPOINT_INCREASE_REGENERATION);
 		}
 	}
 
